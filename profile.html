@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile & Settings | SkinHealth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .tab-button {
+      transition: all 0.3s;
+    }
+    .tab-button.active {
+      border-bottom: 3px solid #059669;
+      color: #059669;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Profile Layout -->
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <div class="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center overflow-hidden">
+              <i class="fas fa-user text-emerald-600 text-3xl"></i>
+            </div>
+            <button class="absolute bottom-0 right-0 bg-white rounded-full p-1 shadow-md">
+              <i class="fas fa-camera text-emerald-600 text-xs"></i>
+            </button>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-gray-800">John Patient</h1>
+            <p class="text-gray-600">Member since June 2022</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="border-b border-gray-200">
+        <div class="flex">
+          <button id="profile-tab" class="tab-button active flex-1 py-4 px-6 text-center">
+            Profile
+          </button>
+          <button id="medical-tab" class="tab-button flex-1 py-4 px-6 text-center text-gray-500 hover:text-emerald-600">
+            Medical History
+          </button>
+          <button id="settings-tab" class="tab-button flex-1 py-4 px-6 text-center text-gray-500 hover:text-emerald-600">
+            Settings
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile Tab Content -->
+      <div id="profile-content" class="p-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Personal Information</h2>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+              <input type="text" value="John" class="w-full border border-gray-300 rounded-lg p-2">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+              <input type="text" value="Patient" class="w-full border border-gray-300 rounded-lg p-2">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" value="john.patient@example.com" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+            <input type="tel" value="(555) 123-4567" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
+            <input type="date" value="1985-06-15" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg mr-3">
+              Cancel
+            </button>
+            <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-lg">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Medical History Tab Content -->
+      <div id="medical-content" class="p-6 hidden">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Medical History</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Known Allergies</label>
+            <textarea class="w-full border border-gray-300 rounded-lg p-2 h-20">Penicillin, Sulfa drugs</textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Current Medications</label>
+            <textarea class="w-full border border-gray-300 rounded-lg p-2 h-20">Cetirizine 10mg daily, Tretinoin cream 0.05%</textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Past Skin Conditions</label>
+            <textarea class="w-full border border-gray-300 rounded-lg p-2 h-20">Acne vulgaris (2015-2018), Eczema (occasional flare-ups)</textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg mr-3">
+              Cancel
+            </button>
+            <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-lg">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Settings Tab Content -->
+      <div id="settings-content" class="p-6 hidden">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Account Settings</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Change Password</label>
+            <input type="password" placeholder="Current Password" class="w-full border border-gray-300 rounded-lg p-2 mb-2">
+            <input type="password" placeholder="New Password" class="w-full border border-gray-300 rounded-lg p-2 mb-2">
+            <input type="password" placeholder="Confirm New Password" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="notifications" class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded" checked>
+            <label for="notifications" class="ml-2 block text-sm text-gray-700">Email Notifications</label>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="sms" class="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded">
+            <label for="sms" class="ml-2 block text-sm text-gray-700">SMS Reminders</label>
+          </div>
+          <div class="pt-4 border-t border-gray-200">
+            <button type="button" class="text-red-600 hover:text-red-800 text-sm font-medium">
+              Delete My Account
+            </button>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg mr-3">
+              Cancel
+            </button>
+            <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded-lg">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include navigation -->
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+
+    // Tab switching functionality
+    document.getElementById('profile-tab').addEventListener('click', function() {
+      switchTab('profile');
+    });
+
+    document.getElementById('medical-tab').addEventListener('click', function() {
+      switchTab('medical');
+    });
+
+    document.getElementById('settings-tab').addEventListener('click', function() {
+      switchTab('settings');
+    });
+
+    function switchTab(tabName) {
+      // Update tab buttons
+      document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active');
+        button.classList.add('text-gray-500');
+      });
+      document.getElementById(`${tabName}-tab`).classList.add('active');
+      document.getElementById(`${tabName}-tab`).classList.remove('text-gray-500');
+
+      // Update content
+      document.getElementById('profile-content').classList.add('hidden');
+      document.getElementById('medical-content').classList.add('hidden');
+      document.getElementById('settings-content').classList.add('hidden');
+      document.getElementById(`${tabName}-content`).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
