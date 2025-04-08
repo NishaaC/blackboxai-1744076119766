@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking | SkinHealth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Booking Layout -->
+  <div class="max-w-4xl mx-auto p-6">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6">
+        <h1 class="text-2xl font-bold text-gray-800">Schedule a Consultation</h1>
+        <p class="text-gray-600 mt-2">Select a date and time that works for you.</p>
+      </div>
+
+      <!-- Calendar Section -->
+      <div class="p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-100 rounded-lg p-4">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Select Date</h2>
+            <input type="date" class="border border-gray-300 rounded-lg p-2 w-full">
+          </div>
+
+          <div class="bg-gray-100 rounded-lg p-4">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Select Time</h2>
+            <select class="border border-gray-300 rounded-lg p-2 w-full">
+              <option>10:00 AM</option>
+              <option>10:30 AM</option>
+              <option>11:00 AM</option>
+              <option>11:30 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>1:30 PM</option>
+              <option>2:00 PM</option>
+              <option>2:30 PM</option>
+              <option>3:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Doctor Selection -->
+        <div class="bg-white rounded-lg shadow-sm mt-6 p-4">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Select Doctor</h2>
+          <select class="border border-gray-300 rounded-lg p-2 w-full">
+            <option>Dr. Sarah Johnson</option>
+            <option>Dr. Michael Chen</option>
+            <option>Dr. Emily Wilson</option>
+            <option>Dr. Robert Garcia</option>
+          </select>
+        </div>
+
+        <!-- Confirm Button -->
+        <div class="flex justify-end mt-6">
+          <button class="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-lg">
+            Confirm Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include navigation -->
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
