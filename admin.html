@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | SkinHealth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <div id="nav-placeholder"></div>
+
+  <!-- Admin Panel Layout -->
+  <div class="max-w-6xl mx-auto p-6">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-emerald-50 to-blue-50 p-6">
+        <h1 class="text-2xl font-bold text-gray-800">Admin Panel</h1>
+        <p class="text-gray-600 mt-2">Manage patient queries, flagged cases, and analytics.</p>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+        <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+          <h2 class="text-lg font-semibold text-gray-800">Total Patients</h2>
+          <p class="text-2xl font-bold text-gray-800">150</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+          <h2 class="text-lg font-semibold text-gray-800">Flagged Cases</h2>
+          <p class="text-2xl font-bold text-red-600">5</p>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+          <h2 class="text-lg font-semibold text-gray-800">Consultations Today</h2>
+          <p class="text-2xl font-bold text-gray-800">20</p>
+        </div>
+      </div>
+
+      <!-- Patient Queries Section -->
+      <div class="p-6">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Patient Queries</h2>
+        <table class="min-w-full bg-white border border-gray-200">
+          <thead>
+            <tr>
+              <th class="py-2 px-4 border-b">Patient Name</th>
+              <th class="py-2 px-4 border-b">Query</th>
+              <th class="py-2 px-4 border-b">Status</th>
+              <th class="py-2 px-4 border-b">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4 border-b">John Patient</td>
+              <td class="py-2 px-4 border-b">Skin rash on arms</td>
+              <td class="py-2 px-4 border-b text-red-600">Flagged</td>
+              <td class="py-2 px-4 border-b">
+                <button class="bg-emerald-600 text-white px-2 py-1 rounded-lg">View</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b">Emily Smith</td>
+              <td class="py-2 px-4 border-b">Consultation request</td>
+              <td class="py-2 px-4 border-b text-green-600">Resolved</td>
+              <td class="py-2 px-4 border-b">
+                <button class="bg-emerald-600 text-white px-2 py-1 rounded-lg">View</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b">Michael Johnson</td>
+              <td class="py-2 px-4 border-b">Follow-up on treatment</td>
+              <td class="py-2 px-4 border-b text-green-600">Resolved</td>
+              <td class="py-2 px-4 border-b">
+                <button class="bg-emerald-600 text-white px-2 py-1 rounded-lg">View</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Flagged Cases Section -->
+      <div class="p-6 border-t border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">Flagged Cases</h2>
+        <ul class="list-disc list-inside">
+          <li class="py-2">
+            <span class="font-medium">John Patient:</span> Skin rash on arms - <span class="text-red-600">Flagged</span>
+          </li>
+          <li class="py-2">
+            <span class="font-medium">Sarah Connor:</span> Severe acne outbreak - <span class="text-red-600">Flagged</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include navigation -->
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
